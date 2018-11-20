@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find ouster_ros)/launch/os1.launch">
+        <arg name="replay" value="true" />
+    </include>
+    <node name="bag_gui" pkg="rqt_bag" type="rqt_bag" args="/root/bag_files/2018-11-07-19-07-11_3.bag" />
+    <!-- <node name="play_bag" pkg="rosbag" type="play" args="/root/bag_files/2018-11-07-19-07-11_3.bag -clock" /> -->
+    <node name="viz" pkg="rviz" type="rviz" args="-d $(find ouster_ros)/cfg/rviz-config.rviz" />
+</launch>
